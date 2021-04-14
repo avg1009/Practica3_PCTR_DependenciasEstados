@@ -104,20 +104,32 @@ public class Parque implements IParque{
 	protected synchronized void comprobarAntesDeEntrar(){	// TODO
 		
 		// TODO
+		while (contadorPersonasTotales == Capacidad_De_Personal) {
 	    try {
 	    	
 		    this.wait();
 			
-		 }catch(InterruptedException e){
+		 	}catch(InterruptedException e){
 			 e.printStackTrace();
-		 }
+		 		}
+	    
+		}
 	}
 
 	protected void comprobarAntesDeSalir(){		// TODO
 		//
 		// TODO
 		//
-	}
+		while (contadorPersonasTotales <1)
+		  try {
+		    	
+			    this.wait();
+				
+			 }catch(InterruptedException e){
+				 e.printStackTrace();
+			 }
+		}
+	
 
 
 }
