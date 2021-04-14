@@ -98,7 +98,7 @@ public class Parque implements IParque{
 		// TODO 
 		assert contadorPersonasTotales <= Capacidad_De_Personal : "INV Se ha llegado al aforo maximo"; 
 		// TODO
-		assert contadorPersonasTotales <= 0 : "INV: Muchas personas negativas en el parque";
+		assert contadorPersonasTotales >= 0 : "INV: Muchas personas negativas en el parque";
 	}
 
 	protected synchronized void comprobarAntesDeEntrar(){	// TODO
